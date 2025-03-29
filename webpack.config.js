@@ -9,9 +9,15 @@ module.exports = {
   },
   module: {
     rules: [
+      //styleのロード設定
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },
+      // imageのロード設定
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },
