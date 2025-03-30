@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const {WebpackManifestPlugin} = require("webpack-manifest-plugin");
 
 module.exports = {
 	mode: "production",
@@ -11,6 +12,9 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: "Output Management",
 		}),
+        new WebpackManifestPlugin({
+            fileName: 'woop-manifest.json',
+          }),
 	],
 	output: {
 		filename: "[name].bundle.js",
