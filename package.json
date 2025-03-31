@@ -8,17 +8,25 @@
     "start": "webpack serve --open",
     "server": "node server.js",
     "watch": "webpack --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "biome format --write"
+    ]
+  },
   "packageManager": "pnpm@10.6.5",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "css-loader": "^7.1.2",
     "express": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
     "style-loader": "^4.0.0",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1",
