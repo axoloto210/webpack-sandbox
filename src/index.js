@@ -1,22 +1,28 @@
-import _ from 'lodash'
-import './style.css';
-import Icon from './woop_org.png'
-
+import _ from "lodash";
+import "./style.css";
+import Icon from "./woop_org.png";
+import printMe from "./print.js";
 
 function component() {
-    const element = document.createElement('div');
-  
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
+	const element = document.createElement("div");
+	const btn = document.createElement("button");
 
-      // Add the image to our existing div.
-  const myIcon = new Image();
-  myIcon.src = Icon;
+	// Lodash, currently included via a script, is required for this line to work
+	element.innerHTML = _.join(["Hello", "webpack"], " ");
+	element.classList.add("hello");
 
-  element.appendChild(myIcon);
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());
+	// Add the image to our existing div.
+	const myIcon = new Image();
+	myIcon.src = Icon;
+
+	element.appendChild(myIcon);
+
+	btn.innerHTML = "Click me and check the console!";
+	btn.onclick = printMe;
+
+	element.appendChild(btn);
+
+	return element;
+}
+
+document.body.appendChild(component());
