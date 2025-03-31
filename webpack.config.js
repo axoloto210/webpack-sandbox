@@ -1,25 +1,30 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const {WebpackManifestPlugin} = require("webpack-manifest-plugin");
+const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 
 module.exports = {
-	mode: "production",
+	mode: "development",
 	entry: {
 		index: "./src/index.js",
 		print: "./src/print.js",
 	},
+	devtool: "inline-source-map",
+	devServer: {
+		static: "./dist",
+	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: "Output Management",
+			title: "Development",
 		}),
-        new WebpackManifestPlugin({
-            fileName: 'woop-manifest.json',
-          }),
+		new WebpackManifestPlugin({
+			fileName: "woop-manifest.json",
+		}),
 	],
 	output: {
 		filename: "[name].bundle.js",
 		path: path.resolve(__dirname, "dist"),
 		clean: true,
+        publicPath: '/',
 	},
 	module: {
 		rules: [
@@ -34,5 +39,8 @@ module.exports = {
 				type: "asset/resource",
 			},
 		],
+	},
+	optimization: {
+		runtimeChunk: "single",
 	},
 };
