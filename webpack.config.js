@@ -1,12 +1,13 @@
-const path = require("path");
+const path = require("node:path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
+
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
 	mode: "development",
 	entry: {
 		index: "./src/index.js",
-		print: "./src/print.js",
 	},
 	devtool: "inline-source-map",
 	devServer: {
@@ -19,6 +20,7 @@ module.exports = {
 		new WebpackManifestPlugin({
 			fileName: "woop-manifest.json",
 		}),
+		// new BundleAnalyzerPlugin(),
 	],
 	output: {
 		filename: "[name].bundle.js",

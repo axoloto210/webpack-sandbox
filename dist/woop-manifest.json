@@ -1,6 +1,7 @@
 {
-  "index.js": "auto/index.bundle.js",
-  "print.js": "auto/print.bundle.js",
-  "woop_org.png": "auto/0c75585d82279f86776c.png",
-  "index.html": "auto/index.html"
+  "index.js": "/index.bundle.js",
+  "runtime.js": "/runtime.bundle.js",
+  "vendors-node_modules_pnpm_lodash_4_17_21_node_modules_lodash_lodash_js.bundle.js": "/vendors-node_modules_pnpm_lodash_4_17_21_node_modules_lodash_lodash_js.bundle.js",
+  "woop_org.png": "/0c75585d82279f86776c.png",
+  "index.html": "/index.html"
 }
