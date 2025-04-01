@@ -1,6 +1,5 @@
 {
   "index.js": "/index.bundle.js",
-  "another.js": "/another.bundle.js",
   "runtime.js": "/runtime.bundle.js",
   "vendors-node_modules_pnpm_lodash_4_17_21_node_modules_lodash_lodash_js.bundle.js": "/vendors-node_modules_pnpm_lodash_4_17_21_node_modules_lodash_lodash_js.bundle.js",
   "woop_org.png": "/0c75585d82279f86776c.png",
