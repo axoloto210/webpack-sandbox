@@ -715,8 +715,12 @@
 		// webpackRuntimeModules
 		/******/ var __webpack_exec__ = (moduleId) =>
 			__webpack_require__((__webpack_require__.s = moduleId));
-		/******/ __webpack_require__.O(0, ["shared"], () =>
-			__webpack_exec__("./src/index.js"),
+		/******/ __webpack_require__.O(
+			0,
+			[
+				"vendors-node_modules_pnpm_lodash_4_17_21_node_modules_lodash_lodash_js",
+			],
+			() => __webpack_exec__("./src/index.js"),
 		);
 		/******/ var __webpack_exports__ = __webpack_require__.O();
 		/******/

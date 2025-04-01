@@ -5,15 +5,8 @@ const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 module.exports = {
 	mode: "development",
 	entry: {
-		index: {
-			import: "./src/index.js",
-			dependOn: "shared",
-		},
-		another: {
-			import: "./src/another-module.js",
-			dependOn: "shared",
-		},
-		shared: "lodash",
+		index: "./src/index.js",
+		another: "./src/another-module.js",
 	},
 	devtool: "inline-source-map",
 	devServer: {
@@ -49,5 +42,8 @@ module.exports = {
 	},
 	optimization: {
 		runtimeChunk: "single",
+		splitChunks: {
+			chunks: "all",
+		},
 	},
 };
