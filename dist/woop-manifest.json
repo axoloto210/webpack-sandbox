@@ -1,6 +1,7 @@
 {
   "index.js": "/index.bundle.js",
   "another.js": "/another.bundle.js",
+  "shared.js": "/shared.bundle.js",
   "runtime.js": "/runtime.bundle.js",
   "woop_org.png": "/0c75585d82279f86776c.png",
   "index.html": "/index.html"
