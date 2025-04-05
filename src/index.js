@@ -1,6 +1,5 @@
 import "./style.css";
 import Icon from "./woop_org.png";
-// import printMe from "./print.js";
 
 // function getComponent() {
 // 	return import("lodash")
@@ -25,7 +24,6 @@ async function getComponent() {
 	const { default: _ } = await import("lodash");
 
 	element.innerHTML = _.join(["Hello", "webpack"], " ");
-	// element.onclick = Print.bind(null, 'Hello webpack!')
 
 	// Add the image to our existing div.
 	const myIcon = new Image();
