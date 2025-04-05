@@ -5,7 +5,7 @@ const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
-	mode: "development",
+	mode: "production",
 	entry: {
 		index: "./src/index.js",
 	},
@@ -44,5 +44,15 @@ module.exports = {
 	},
 	optimization: {
 		runtimeChunk: "single",
+		moduleIds: "deterministic", // webpack5 ではproductionモードではデフォルトで有効
+		splitChunks: {
+			cacheGroups: {
+				vendor: {
+					test: /[\\/]node_modules[\\/]/,
+					name: "vendors",
+					chunks: "all",
+				},
+			},
+		},
 	},
 };
