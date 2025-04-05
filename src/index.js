@@ -1,6 +1,5 @@
 import "./style.css";
 import Icon from "./woop_org.png";
-import printMe from "./print.js";
 
 // function getComponent() {
 // 	return import("lodash")

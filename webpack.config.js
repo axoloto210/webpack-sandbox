@@ -5,7 +5,7 @@ const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
-	mode: "development",
+	mode: "production",
 	entry: {
 		index: "./src/index.js",
 	},
@@ -15,7 +15,7 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: "Development",
+			title: "Caching",
 		}),
 		new WebpackManifestPlugin({
 			fileName: "woop-manifest.json",
@@ -23,7 +23,7 @@ module.exports = {
 		// new BundleAnalyzerPlugin(),
 	],
 	output: {
-		filename: "[name].bundle.js",
+		filename: "[name].[contenthash].js",
 		path: path.resolve(__dirname, "dist"),
 		clean: true,
 		publicPath: "/",
@@ -44,5 +44,15 @@ module.exports = {
 	},
 	optimization: {
 		runtimeChunk: "single",
+		moduleIds: "deterministic", // webpack5 ではproductionモードではデフォルトで有効
+		splitChunks: {
+			cacheGroups: {
+				vendor: {
+					test: /[\\/]node_modules[\\/]/,
+					name: "vendors",
+					chunks: "all",
+				},
+			},
+		},
 	},
 };
